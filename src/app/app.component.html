@@ -1,0 +1,27 @@
+<mgl-map
+  id="map"
+  [style]="'mapbox://styles/mapbox/streets-v11'"
+  [center]="[-79.3, 43.7]"
+  [doubleClickZoom]="false"
+  [zoom]="[9]"
+  [antialias]="true"
+  [attributionControl]="false"
+>
+
+<mgl-control
+position="top-left">
+Toronto Income Summary:<br/>
+Max Income: ${{getMax()}}<br/>
+Min Income: ${{getMin()}}<br/>
+Average Income: ${{getAverage()}}<br/>
+</mgl-control>
+
+
+<mgl-geojson-source
+id="neighbourhoodIncome"
+[data]="mydata"
+>
+></mgl-geojson-source>
+
+
+</mgl-map>
