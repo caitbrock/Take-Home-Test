@@ -14,11 +14,13 @@ export class AppComponent implements OnInit {
 
   public ngOnInit() {
     let mydata = this.services.retrieveGeoJSON();
-    let mypoints = data.features[0].geometry.coordinates
+
+    // Testing Point Object
+    // let mypoints = data.features[0].geometry.coordinates
+    // mypoints: object = {};
   }
 
   mydata: object = {};
-  mypoints: object = {};
 
   //Maximum Income Values
   getMax() {
