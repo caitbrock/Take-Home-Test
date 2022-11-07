@@ -55,4 +55,11 @@ export class AppComponent implements OnInit {
     return Math.trunc(average);
   }
 
+  //Coordinate Values
+  getCoordinates() {
+    let coordinates = data.features[0].geometry.coordinates[0][0];
+    for (let i = 1; i < data.features.length; ++i) {
+      return coordinates;
+    }
+  }
 }

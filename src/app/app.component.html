@@ -1,3 +1,11 @@
+<style>
+  .mapboxgl-popup {
+  max-width: 400px;
+  font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+  };
+
+</style>
+
 <mgl-map
   id="map"
   [style]="'mapbox://styles/mapbox/streets-v11'"
@@ -21,8 +29,50 @@
     type="fill"
     source="data"
     [paint]="{
-  'fill-color': '#627BC1'
-}"
+      'fill-color': [
+        'interpolate',
+        ['linear'],
+        ['get', 'Total income: Average amount ($)'],
+        0,
+        '#F2F12D',
+        30000,
+        '#EED322',
+        40000,
+        '#E6B71E',
+        50000,
+        '#DA9C20',
+        60000,
+        '#CA8323',
+        70000,
+        '#B86B25',
+        80000,
+        '#A25626',
+        90000,
+        '#8B4225',
+        150000,
+        '#723122'
+      ],
+      'fill-outline-color': '#FFFFFF',
+      'fill-opacity': 0.8
+    }"
   >
+
+<!-- Hover Feature
+  <mgl-layer
+  id="neighbourhood-hover"
+  source="data"
+  [paint]="{
+    'fill-color': '#627BC1',
+    'fill-opacity': 1
+  }"
+  [filter]="hoverFilter"
+>
+</mgl-layer>
+
+Marker Feature
+    <mgl-marker [lngLat]="[-79.3, 43.7]" source="data" [closeOnClick]="false">
+    {{ getNeighbourhoodName() }}
+    </mgl-marker> -->
+
   </mgl-layer>
 </mgl-map>
