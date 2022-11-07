@@ -13,11 +13,7 @@ export class AppComponent implements OnInit {
   constructor(public services: DataRetrievalService) {}
 
   public ngOnInit() {
-    let mydata = this.services.retrieveGeoJSON();
-
-    // Testing Point Object
-    // let mypoints = data.features[0].geometry.coordinates
-    // mypoints: object = {};
+    this.mydata = this.services.retrieveGeoJSON();
   }
 
   mydata: object = {};
@@ -59,11 +55,4 @@ export class AppComponent implements OnInit {
     return Math.trunc(average);
   }
 
-  //Coordinate Values
-  getCoordinates() {
-    let coordinates = data.features[0].geometry.coordinates[0];
-    for (let i = 1; i < data.features.length; ++i) {
-      return coordinates;
-    }
-  }
 }
