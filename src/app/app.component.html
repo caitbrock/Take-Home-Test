@@ -18,10 +18,16 @@ Average Income: ${{getAverage()}}<br/>
 
 
 <mgl-geojson-source
-id="neighbourhoodIncome"
+id="data"
 [data]="mydata"
 >
-></mgl-geojson-source>
+</mgl-geojson-source>
 
+<mgl-layer
+id="neighbourhood-fills"
+type="fill"
+source="data"
+>
+</mgl-layer>
 
 </mgl-map>
