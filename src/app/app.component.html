@@ -7,27 +7,23 @@
   [antialias]="true"
   [attributionControl]="false"
 >
+  <mgl-control position="top-left">
+    Toronto Income Summary:<br />
+    Max Income: ${{ getMax() }}<br />
+    Min Income: ${{ getMin() }}<br />
+    Average Income: ${{ getAverage() }}<br />
+  </mgl-control>
 
-<mgl-control
-position="top-left">
-Toronto Income Summary:<br/>
-Max Income: ${{getMax()}}<br/>
-Min Income: ${{getMin()}}<br/>
-Average Income: ${{getAverage()}}<br/>
-</mgl-control>
+  <mgl-geojson-source id="data" [data]="mydata"> </mgl-geojson-source>
 
-
-<mgl-geojson-source
-id="data"
-[data]="mydata"
->
-</mgl-geojson-source>
-
-<mgl-layer
-id="neighbourhood-fills"
-type="fill"
-source="data"
->
-</mgl-layer>
-
+  <mgl-layer
+    id="neighbourhood-fills"
+    type="fill"
+    source="data"
+    paint="{
+  'fill-color': '#627BC1',
+  'fill-stroke': 3
+}"
+  >
+  </mgl-layer>
 </mgl-map>
